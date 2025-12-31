@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #ec4899; }
+}
+
+.animate-blink {
+  animation: blink 0.75s step-end infinite;
+}
