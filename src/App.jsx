@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import LoveNavbar from "./components/LoveNavbar";
+import LoveNavbar from "./Components/LoveNavbar";
 
 const lines = ["Hey Baby girl!", "This Page", "is About", "You"];
 
