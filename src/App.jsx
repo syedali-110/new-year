@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import LoveNavbar from "./components/LoveNavbar";
 
-
 const lines = ["Hey Baby girl!", "This Page", "is About", "You"];
 
 export default function Hero() {
