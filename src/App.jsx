@@ -11,17 +11,15 @@ export default function Hero() {
   useEffect(() => {
     let timer;
 
-    // ✅ When all lines are finished
     if (currentLine === lines.length) {
       timer = setTimeout(() => {
         setDisplayText(Array(lines.length).fill(""));
         setCurrentLine(0);
         setCurrentChar(0);
-      }, 1500); // pause before restart
+      }, 1500);
       return () => clearTimeout(timer);
     }
 
-    // ✅ Typing characters
     if (currentChar < lines[currentLine].length) {
       timer = setTimeout(() => {
         setDisplayText((prev) => {
@@ -31,9 +29,7 @@ export default function Hero() {
         });
         setCurrentChar((prev) => prev + 1);
       }, 100);
-    }
-    // ✅ Move to next line
-    else {
+    } else {
       timer = setTimeout(() => {
         setCurrentLine((prev) => prev + 1);
         setCurrentChar(0);
@@ -46,37 +42,41 @@ export default function Hero() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-x-hidden">
       <LoveNavbar />
+
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-[1200px] mx-auto px-16 pt-32 flex gap-20 items-end relative">
-        <img
-          src="/saba2.jpeg"
-          alt="hero"
-          className="w-[340px] h-[440px] object-cover rounded-xl shadow-xl"
-        />
+      <section className="max-w-[1200px] mx-auto px-6 md:px-16 pt-20 md:pt-32 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center relative">
+        <div className="flex-1">
+          <h1 className="text-4xl sm:text-5xl md:text-[80px] font-extrabold leading-snug md:leading-[1.05] text-gray-300 whitespace-pre-wrap">
+            {displayText.map((line, idx) => (
+              <span key={idx}>
+                {line}
+                <br />
+              </span>
+            ))}
+            <span className="border-r-4 border-pink-600 animate-blink ml-1" />
+          </h1>
+        </div>
 
-        <h1 className="text-[80px] font-extrabold leading-[1.05] text-gray-300 whitespace-pre-wrap">
-          {displayText.map((line, idx) => (
-            <span key={idx}>
-              {line}
-              <br />
-            </span>
-          ))}
-          <span className="border-r-4 border-pink-600 animate-blink ml-1" />
-        </h1>
+        <div className="flex-shrink-0">
+          <img
+            src="/saba2.jpeg"
+            alt="hero"
+            className="w-full max-w-[340px] h-auto sm:h-[400px] md:h-[440px] object-cover rounded-xl shadow-xl"
+          />
+        </div>
 
-        <span className="text-pink-600 text-[150px] absolute top-[3.25rem] left-[28.75rem]">
+        <span className="text-pink-600 text-[80px] sm:text-[100px] md:text-[150px] absolute top-[2rem] sm:top-[2.5rem] md:top-[3.25rem] left-[4rem] sm:left-[6rem] md:left-[28.75rem]">
           “
         </span>
       </section>
 
       {/* ================= QUOTE + IMAGE ================= */}
-      <section className="max-w-[1300px] mx-auto px-16 mt-40 flex gap-20 items-center relative">
-        <div>
-          {" "}
-          <h2 className="text-[70px] text-gray-300 font-extrabold mb-6">
+      <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-40 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center">
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6">
             Your Gestures
           </h2>
-          <p className="flex-1 text-gray-400 text-lg leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Your presence makes everything feel softer, brighter, and worth
             believing in. You have this magical way of turning ordinary moments
             into something extraordinary—just a glance from you warms my heart
@@ -91,24 +91,24 @@ export default function Hero() {
         <img
           src="/saba1.jpeg"
           alt="quote"
-          className="w-[420px] h-[340px] object-cover rounded-xl shadow-2xl"
+          className="w-full max-w-[420px] h-auto sm:h-[300px] md:h-[340px] object-cover rounded-xl shadow-2xl"
         />
       </section>
 
       {/* ================= YOUR EYES SECTION ================= */}
-      <section className="max-w-[1400px] mx-auto px-16 mt-48 flex gap-24 items-center">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-20 md:mt-48 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
         <img
           src="/saba5.jpeg"
           alt="eyes"
-          className="w-full h-[420px] object-cover rounded-xl shadow-xl"
+          className="w-full md:w-auto h-[300px] sm:h-[360px] md:h-[420px] object-cover rounded-xl shadow-xl"
         />
 
-        <div>
-          <h2 className="text-[70px] text-gray-300 font-extrabold mb-6 flex items-center gap-4">
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Eyes 👁️
           </h2>
 
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Your eyes are my favorite color—the deepest, warmest shade that
             pulls me in like a secret sunset. They hold stories I never get
             tired of reading, every glance revealing new chapters of your soul,
@@ -121,13 +121,13 @@ export default function Hero() {
       </section>
 
       {/* ================= FINAL IMAGE + TEXT ================= */}
-      <section className="max-w-[1300px] mx-auto px-16 mt-48 mb-32 flex gap-24 items-center">
-        <div>
-          <h2 className="text-[70px] text-gray-300 font-extrabold mb-6 flex items-center gap-4">
+      <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-48 mb-20 md:mb-32 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Beauty ❤️
           </h2>
 
-          <p className="flex-1 text-lg text-gray-400 leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Your beauty is a quiet symphony that captivates every sense—soft
             curves like sculpted poetry, skin glowing with the warmth of
             dawn-kissed petals. Your smile blooms like wildflowers in spring,
@@ -146,24 +146,24 @@ export default function Hero() {
         <img
           src="/saba8.jpeg"
           alt="final"
-          className="h-[600px] object-center rounded-xl shadow-xl"
+          className="w-full md:w-auto h-[300px] sm:h-[400px] md:h-[600px] object-cover rounded-xl shadow-xl"
         />
       </section>
 
       {/* ================= YOUR SMILE SECTION ================= */}
-      <section className="max-w-[1400px] mx-auto px-16 mt-48 flex gap-24 items-center pb-[90px]">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-20 md:mt-48 flex flex-col md:flex-row gap-10 md:gap-24 items-center pb-24">
         <img
           src="/saba4.jpeg"
           alt="smile"
-          className="h-[720px] w-full rounded-xl shadow-xl object-cover"
+          className="w-full md:w-auto h-[300px] sm:h-[500px] md:h-[720px] object-cover rounded-xl shadow-xl"
         />
 
-        <div>
-          <h2 className="text-[70px] text-gray-300 font-extrabold mb-6 flex items-center gap-4">
+        <div className="flex-1">
+          <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Smile 😄
           </h2>
 
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Your smile is like a sunrise after the darkest night—it warms
             hearts, brightens moods, and spreads a quiet joy everywhere you go.
             Every curve of your lips holds laughter, hope, and a gentle reminder
