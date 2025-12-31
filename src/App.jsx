@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import LoveNavbar from "./Components/LoveNavbar";
+import LoveNavbar from "./components/LoveNavbar.jsx";
 
 const lines = ["Hey Baby girl!", "This Page", "is About", "You"];
 
@@ -47,7 +47,7 @@ export default function Hero() {
     <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-x-hidden">
       <LoveNavbar />
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-[1200px] mx-auto px-16 pt-32 flex gap-20 items-end-safe relative">
+      <section className="max-w-[1200px] mx-auto px-16 pt-32 flex gap-20 items-end relative">
         <img
           src="/saba2.jpeg"
           alt="hero"
@@ -64,7 +64,7 @@ export default function Hero() {
           <span className="border-r-4 border-pink-600 animate-blink ml-1" />
         </h1>
 
-        <span className="text-pink-600 text-[150px] absolute top-13 left-115">
+        <span className="text-pink-600 text-[150px] absolute top-[3.25rem] left-[28.75rem]">
           “
         </span>
       </section>
