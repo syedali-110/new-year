@@ -63,7 +63,7 @@ export default function Hero() {
           <img
             src="/saba2.jpeg"
             alt="hero"
-            className="rounded-xl w-[300] h-screen transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+            className="rounded-xl max-w-7xl max-h-dvh transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
           />
         </div>
 
