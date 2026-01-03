@@ -17,7 +17,7 @@ module.exports = {
         typewriter:
           "typewriter 10s steps(40, end) infinite, blink 0.75s step-end infinite",
       },
-    },
+    }, 
   },
   plugins: [],
 };

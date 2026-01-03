@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import LoveNavbar from "./components/LoveNavbar.jsx";
+import Eye from "./components/Eye.jsx";
+import LoveNavbar from "./Components/LoveNavbar.jsx";
 
 const lines = ["Hey Baby girl!", "This Page", "is About", "You"];
 
@@ -7,6 +8,18 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState(Array(lines.length).fill(""));
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMove = (e) => {
+      setMouse({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
   useEffect(() => {
     let timer;
@@ -40,11 +53,21 @@ export default function Hero() {
   }, [currentChar, currentLine]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-hidden transition-transform duration-300">
       <LoveNavbar />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-[1200px] mx-auto px-6 md:px-16 pt-20 md:pt-32 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center relative">
+      <section className="max-w-[1200px] mx-auto px-6 md:px-16 pt-20 md:pt-19 flex flex-col md:flex-row gap-10 md:gap-20 items-center relative">
+        {/* IMAGE - LEFT */}
+        <div className="flex-shrink-0">
+          <img
+            src="/saba2.jpeg"
+            alt="hero"
+            className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+          />
+        </div>
+
+        {/* TEXT - RIGHT */}
         <div className="flex-1">
           <h1 className="text-4xl sm:text-5xl md:text-[80px] font-extrabold leading-snug md:leading-[1.05] text-gray-300 whitespace-pre-wrap">
             {displayText.map((line, idx) => (
@@ -57,22 +80,14 @@ export default function Hero() {
           </h1>
         </div>
 
-        <div className="flex-shrink-0">
-          <img
-            src="/saba2.jpeg"
-            alt="hero"
-            className="w-full max-w-[340px] h-auto sm:h-[400px] md:h-[440px] object-cover rounded-xl shadow-xl"
-          />
-        </div>
-
-        <span className="text-pink-600 text-[80px] sm:text-[100px] md:text-[150px] absolute top-[2rem] sm:top-[2.5rem] md:top-[3.25rem] left-[4rem] sm:left-[6rem] md:left-[28.75rem]">
+        <span className="text-pink-600 text-[80px] sm:text-[100px] md:text-[190px] absolute top-[2rem] sm:top-[2.5rem] md:top-[5.1rem] left-[4rem] sm:left-[6rem] md:left-[29.75rem]">
           “
         </span>
       </section>
 
       {/* ================= QUOTE + IMAGE ================= */}
       <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-40 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center">
-        <div className="flex-1">
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6">
             Your Gestures
           </h2>
@@ -91,7 +106,7 @@ export default function Hero() {
         <img
           src="/saba1.jpeg"
           alt="quote"
-          className="w-full max-w-[420px] h-auto sm:h-[300px] md:h-[340px] object-cover rounded-xl shadow-2xl"
+          className="rounded-xl w-[200] h-[450px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
       </section>
 
@@ -100,13 +115,14 @@ export default function Hero() {
         <img
           src="/saba5.jpeg"
           alt="eyes"
-          className="w-full md:w-auto h-[300px] sm:h-[360px] md:h-[420px] object-cover rounded-xl shadow-xl"
+          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
 
-        <div className="flex-1">
-          <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
-            Your Eyes 👁️
-          </h2>
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
+          <div className="relative">
+            <Eye />
+            <span className="absolute inset-0 rounded-full blur-xl bg-pink-500/30 -z-10" />
+          </div>
 
           <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
             Your eyes are my favorite color—the deepest, warmest shade that
@@ -122,7 +138,7 @@ export default function Hero() {
 
       {/* ================= FINAL IMAGE + TEXT ================= */}
       <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-48 mb-20 md:mb-32 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
-        <div className="flex-1">
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Beauty ❤️
           </h2>
@@ -146,7 +162,7 @@ export default function Hero() {
         <img
           src="/saba8.jpeg"
           alt="final"
-          className="w-full md:w-auto h-[300px] sm:h-[400px] md:h-[600px] object-cover rounded-xl shadow-xl"
+          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
       </section>
 
@@ -155,10 +171,10 @@ export default function Hero() {
         <img
           src="/saba4.jpeg"
           alt="smile"
-          className="w-full md:w-auto h-[300px] sm:h-[500px] md:h-[720px] object-cover rounded-xl shadow-xl"
+          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
 
-        <div className="flex-1">
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Smile 😄
           </h2>
@@ -183,6 +199,18 @@ export default function Hero() {
           </p>
         </div>
       </section>
+      <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
+        <p className="text-center text-pink-500 text-lg mb-3 animate-pulse">
+          Made with ❤️ just for you
+        </p>
+      </div>
+      <div
+        className="fixed w-40 h-40 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"
+        style={{
+          left: mouse.x * 3,
+          top: mouse.y * 3,
+        }}
+      />
     </div>
   );
 }
