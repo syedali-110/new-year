@@ -63,7 +63,7 @@ export default function Hero() {
           <img
             src="/saba2.jpeg"
             alt="hero"
-            className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+            className="rounded-xl w-[300] h-screen transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
           />
         </div>
 
@@ -80,7 +80,7 @@ export default function Hero() {
           </h1>
         </div>
 
-        <span className="text-pink-600 text-[80px] sm:text-[100px] md:text-[190px] absolute top-[2rem] sm:top-[2.5rem] md:top-[5.1rem] left-[4rem] sm:left-[6rem] md:left-[29.75rem]">
+        <span className="text-pink-600 text-[80px] sm:text-[100px] md:text-[190px] absolute top-[2rem] sm:top-[2.5rem] md:top-[7.1rem] left-[4rem] sm:left-[6rem] md:left-[32.75rem]">
           “
         </span>
       </section>
@@ -106,7 +106,7 @@ export default function Hero() {
         <img
           src="/saba1.jpeg"
           alt="quote"
-          className="rounded-xl w-[200] h-[450px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+          className="rounded-xl w-[600] max-h-fit  transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
       </section>
 
@@ -115,7 +115,7 @@ export default function Hero() {
         <img
           src="/saba5.jpeg"
           alt="eyes"
-          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+          className="rounded-xl max-w-7xl max-h-dvh transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
 
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
@@ -162,7 +162,7 @@ export default function Hero() {
         <img
           src="/saba8.jpeg"
           alt="final"
-          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+          className="rounded-xl max-w-7xl max-h-dvh transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
       </section>
 
@@ -171,7 +171,7 @@ export default function Hero() {
         <img
           src="/saba4.jpeg"
           alt="smile"
-          className="rounded-xl w-[300] h-[650px] transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
+          className="rounded-xl max-w-7xl max-h-dvh transition-transform duration-700 hover:scale-[1.04] hover:rotate-1"
         />
 
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
