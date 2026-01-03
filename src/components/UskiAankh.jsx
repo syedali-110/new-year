@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Eye = ({ size = 100 }) => {
+const UskiAankh = ({ size = 100 }) => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   return (
@@ -41,4 +41,4 @@ const Eye = ({ size = 100 }) => {
   );
 };
 
-export default Eye;
+export default UskiAankh;

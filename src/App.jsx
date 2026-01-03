@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Eye from "./components/Eye.jsx";
-import LoveNavbar from "./Components/LoveNavbar.jsx";
+import UskiAankh from "./components/UskiAankh.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 const lines = ["Hey Baby girl!", "This Page", "is About", "You"];
 
@@ -54,7 +54,7 @@ export default function Hero() {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-hidden transition-transform duration-300">
-      <LoveNavbar />
+      <Navbar />
 
       {/* ================= HERO SECTION ================= */}
       <section className="max-w-[1200px] mx-auto px-6 md:px-16 pt-20 md:pt-19 flex flex-col md:flex-row gap-10 md:gap-20 items-center relative">
@@ -120,7 +120,7 @@ export default function Hero() {
 
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <div className="relative">
-            <Eye />
+            <UskiAankh />
             <span className="absolute inset-0 rounded-full blur-xl bg-pink-500/30 -z-10" />
           </div>
 

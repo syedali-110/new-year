@@ -1,4 +1,4 @@
-export default function LoveNavbar() {
+export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
       <div className="max-w-[1400px] mx-auto px-12 py-4 flex items-center justify-between">
