@@ -53,11 +53,11 @@ export default function Hero() {
   }, [currentChar, currentLine]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-hidden transition-transform duration-300">
+    <div className="min-h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white overflow-x-hidden transition-transform duration-300">
       <Navbar />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-[1200px] mx-auto px-6 md:px-16 pt-20 md:pt-19 flex flex-col md:flex-row gap-10 md:gap-20 items-center relative">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-16 pt-20 md:pt-19 flex flex-col md:flex-row gap-10 md:gap-20 items-center relative">
         {/* IMAGE - LEFT */}
         <div className="flex-shrink-0">
           <img
@@ -86,7 +86,7 @@ export default function Hero() {
       </section>
 
       {/* ================= QUOTE + IMAGE ================= */}
-      <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-40 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-20 md:mt-40 flex flex-col-reverse md:flex-row gap-10 md:gap-20 items-center">
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6">
             Your Gestures
@@ -137,7 +137,7 @@ export default function Hero() {
       </section>
 
       {/* ================= FINAL IMAGE + TEXT ================= */}
-      <section className="max-w-[1300px] mx-auto px-6 md:px-16 mt-20 md:mt-48 mb-20 md:mb-32 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-20 md:mt-48 mb-20 md:mb-32 flex flex-col md:flex-row gap-10 md:gap-24 items-center">
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 shadow-2xl">
           <h2 className="text-3xl sm:text-4xl md:text-[70px] text-gray-300 font-extrabold mb-4 md:mb-6 flex items-center gap-2 md:gap-4">
             Your Beauty ❤️
